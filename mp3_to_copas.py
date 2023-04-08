@@ -2,6 +2,7 @@ import os
 from pydub import AudioSegment
 from pydub.utils import make_chunks
 import librosa
+import numpy as np
 
 # 入力MP3ファイルのパスを設定
 input_mp3_file = "to input mp3 file"
@@ -48,7 +49,7 @@ for file_name in os.listdir(output_directory):
         amplitude = librosa.amplitude_to_db(librosa.stft(audio_data, n_fft=frame_length, hop_length=hop_length), ref=np.max)
         
         # 静音フレームの数をカウント
-        silence_frames = sum([1 for frame in amplitude if frame < silence_threshold])
+        silence_frames = sum([1 for frame in amplitude if np.all(frame < silence_threshold)])
         total_frames = len(amplitude)
         
         # 静音が半分以上を占めているかどうかをチェック
