@@ -14,9 +14,9 @@ parser.add_argument('--input', type=str, required=True,
                     help='path to input file')
 parser.add_argument( '--outdir', type=str, required=False,default='./Result_split_audio',
                     help='path to outdir')
-parser.add_argument( '--max', type=int,required=False, default=2000,
+parser.add_argument( '--max', type=int,required=False, default=5000,
                     help='max_chunk_len')
-parser.add_argument( '--min', type=int,required=False, default=5000,
+parser.add_argument( '--min', type=int,required=False, default=2000,
                     help='min_chunk_len')
 parser.add_argument( '--freq', type=int,required=False, default=-40,
                     help='frequency')
