@@ -20,11 +20,9 @@ parser.add_argument( '--rate', type=int,required=False, default=50,
 args = parser.parse_args()
 
 # 入力MP3ファイルのパスを設定
-input_file = "./Voice_data_pool/Akari_kito.mp3"
 input_file = args.input
 
 # 出力WAVファイルを保存するディレクトリを設定
-output_directory = "./Result/Akari_kito"
 output_directory = args.outdir
 
 # 出力ディレクトリが存在しない場合、作成する
