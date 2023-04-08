@@ -27,5 +27,17 @@ pip install -r requirements.txt
 ### run
 Enter the folder location, command and run.
 ```
-python mp3_to_copas.py
+python mp3_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out dir＞
+```
+
+You can also specify the duration of the wav file to be cut, the frequency (dB) to be considered quiet, and the percentage of quiet.
+
+--time : Output wav file time (unit: second)
+
+--freq : Volume threshold for judging silence (unit: dB)
+
+--rate : Select and delete wav files containing silent sounds at a rate equal to the rate rate or above.(unit: %)
+
+```
+python mp3_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out dir＞ --time 4 --freq -40 --rate 50
 ```
