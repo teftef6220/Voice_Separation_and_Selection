@@ -1,6 +1,22 @@
 # Separate mp3 or wav Voice Data wav for RVC train
+### ja  
+
+RVC のデータセット作成のためのコードです。
+mp3 もしくは wav ファイルを入力とし、処理されたwav ファイルを返します。  
+
+・音声ファイルを等間隔で分割するコードaudio_to_copas.py と  
+・発話ごとに音声を分割し、適切な長さに区切るaudio_to_copas.py があります。  
+
+### en  
+Code for RVC dataset creation.
+Takes an mp3 or wav file as input and returns a processed wav file.  
+
+・Code audio_to_copas.py that divides the audio file at equal intervals and  
+・There is audio_to_copas.py that divides the audio for each utterance and divides it into appropriate length  
 
 ## Install
+
+python version is 3.10
 
 ### clone  
 Use command to clone or download file 
