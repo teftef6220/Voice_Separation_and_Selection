@@ -1,4 +1,4 @@
-# Separate Voice Data to mp3 for RVC train
+# Separate mp3 or wav Voice Data wav for RVC train
 
 ## Innstall
 
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ### run
 Enter the folder location, command and run.
 ```
-python mp3_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out dir＞
+python audio_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out dir＞
 ```
 
 You can also specify the duration of the wav file to be cut, the frequency (dB) to be considered quiet, and the percentage of quiet.
@@ -39,5 +39,5 @@ You can also specify the duration of the wav file to be cut, the frequency (dB) 
 --rate : Select and delete wav files containing silent sounds at a rate equal to the rate rate or above.(unit: %)
 
 ```
-python mp3_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out dir＞ --time 4 --freq -40 --rate 50
+python audio_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out dir＞ --time 4 --freq -40 --rate 50
 ```
