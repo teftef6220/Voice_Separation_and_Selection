@@ -13,7 +13,7 @@ python audio_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out 
 parser = argparse.ArgumentParser(description='description of your command')
 parser.add_argument('--input', type=str, required=True,
                     help='path to input file')
-parser.add_argument( '--outdir', type=str, required=True,default='./Result',
+parser.add_argument( '--outdir', type=str, required=False,default='./Result',
                     help='path to outdir')
 parser.add_argument( '--time', type=int,required=False, default=4,
                     help='Length of time to separate videos')
