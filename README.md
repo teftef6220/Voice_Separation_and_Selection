@@ -31,10 +31,13 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Run audio_to_copas.py 
+# Run audio_to_copas.py 
+### ja  
 このコードは音声を指定した長さに分割します。
 
+### en  
 Enter the folder location, command and run.
+
 ```
 python audio_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out dir＞
 ```
@@ -51,13 +54,16 @@ You can also specify the duration of the wav file to be cut, the frequency (dB) 
 python audio_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out dir＞ --time 4 --freq -40 --rate 50
 ```
 
-### Run audio_to_copas.py 
+# Run audio_to_copas.py 
+
+### ja  
 このコードは音声発話ごとに分けて分割します。このコードでは分割する音声の長さをミリ秒で指定できます。
 --max に最大、--min に最小を指定することで発話を始点として min ~ max までの間に分けてくれます。
 
-ただ長すぎる場合は--max ミリ秒ごとに分割します。また端数は --min ミリ秒より短い場合は切り捨てられます。
-例えば16秒の音声に分割された場合、 5+5+5+1と分割され、最後の1　秒は保存されず、スルーされます。
+・ただ長すぎる場合は--max ミリ秒ごとに分割します。また端数は --min ミリ秒より短い場合は切り捨てられます。
+・例えば16秒の音声に分割された場合、 5+5+5+1と分割され、最後の1　秒は保存されず、スルーされます。
 
+### en  
 Splits mp3 or wav files into utterances.
  
 ・If the speech file is too long, divide it into n parts (for example, if it is 16 seconds, divide it into 5+5+5+1 and don't save the last short part)
