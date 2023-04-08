@@ -83,7 +83,7 @@ python audio_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out 
 Splits mp3 or wav files into utterances.
  
 ・If the speech file is too long, divide it into n parts (for example, if it is 16 seconds, divide it into 5+5+5+1 and don't save the last short part)
-・Do not save if the speech file is too short
+・If the speech file is too short not save 
 ```
 python separate_in_speach.py --input ＜path to input file＞
 ```
