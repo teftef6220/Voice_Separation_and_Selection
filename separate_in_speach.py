@@ -4,7 +4,9 @@ from pydub.silence import split_on_silence
 import argparse
 
 '''
+python separate_in_speach.py --input ＜path to input file＞
 
+python separate_in_speach.py --input ＜path to input file＞ --outdir ＜path to out dir＞ --max 5000 --min 2000 --freq -40
 '''
 
 parser = argparse.ArgumentParser(description='description of your command')
