@@ -1,6 +1,6 @@
 # Separate mp3 or wav Voice Data wav for RVC train
 
-## Innstall
+## Install
 
 ### clone  
 Use command to clone or download file 
