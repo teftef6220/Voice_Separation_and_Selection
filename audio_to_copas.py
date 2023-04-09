@@ -50,7 +50,7 @@ chunks = make_chunks(audio, chunk_length)
 
 # 各チャンクをWAVファイルとして保存する
 for i, chunk in enumerate(chunks):
-    output_wav_file = os.path.join(output_directory, (os.path.basename(input_file)[:-4]+f"_chunk_{i}.wav"))
+    output_wav_file = os.path.join(output_directory, (os.path.splitext(os.path.basename(input_file))[0]+f"_chunk_{i}.wav"))
     chunk.export(output_wav_file, format="wav")
     print(f"Saved {output_wav_file}")
 
