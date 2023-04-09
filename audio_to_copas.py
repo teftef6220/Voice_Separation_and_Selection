@@ -13,7 +13,7 @@ python audio_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out 
 parser = argparse.ArgumentParser(description='description of your command')
 parser.add_argument('--input', type=str, required=True,
                     help='path to input file')
-parser.add_argument( '--outdir', type=str, required=False,default='./Result',
+parser.add_argument( '--outdir', type=str, required=True,default='./Result',
                     help='path to outdir')
 parser.add_argument( '--time', type=int,required=False, default=4,
                     help='Length of time to separate videos')
@@ -50,7 +50,7 @@ chunks = make_chunks(audio, chunk_length)
 
 # 各チャンクをWAVファイルとして保存する
 for i, chunk in enumerate(chunks):
-    output_wav_file = os.path.join(output_directory, f"chunk_{i}.wav")
+    output_wav_file = os.path.join(output_directory, (os.path.basename(input_file)[:-4]+f"_chunk_{i}.wav"))
     chunk.export(output_wav_file, format="wav")
     print(f"Saved {output_wav_file}")
 

@@ -67,5 +67,5 @@ for chunk in chunks:
         pass
 
 for i, chunk in enumerate(output_chunks):
-    print("Saving "+f"chunk_{i}.wav")
-    chunk.export(os.path.join(output_dir, f"chunk_{i}.wav"), format="wav")
+    print("Saving "+os.path.basename(input_file)[:-4]+f"_chunk_{i}.wav")
+    chunk.export(os.path.join(output_dir, (os.path.basename(input_file)[:-4]+f"_chunk_{i}.wav")), format="wav")
