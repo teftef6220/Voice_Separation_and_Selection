@@ -22,6 +22,11 @@ parser.add_argument( '--freq', type=int,required=False, default=-40,
                     help='frequency')
 parser.add_argument( '--keep_silence', type=int, required=False, default=500,
                     help='keep_silence')
+parser.add_argument( '--margin', type=int,required=False, default=0,
+                    help='Adjust the length of the margin when cutting the video')
+parser.add_argument( '--padding', type=bool, required=False, default=True,
+                    help='whether to pad the last chunk')
+
 args = parser.parse_args()
 
 print("Running...")
@@ -48,7 +53,7 @@ chunks = split_on_silence(audio, min_silence_len=min_silence_len, silence_thresh
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
-min_chunk_len = args.min  # 2秒
+min_chunk_len = args.min + args.keep_silence  # 2秒+keep_silence
 max_chunk_len = args.max  # 5秒
 
 output_chunks = []
@@ -57,9 +62,17 @@ for chunk in chunks:
     print(len(chunk))
     if len(chunk) > min_chunk_len:
         if len(chunk) > max_chunk_len:
-            sub_chunks = [chunk[i:i + max_chunk_len] for i in range(0, len(chunk), max_chunk_len)]
+            # sub_chunks = [chunk[i:i + max_chunk_len] for i in range(0, len(chunk), max_chunk_len)]
+            sub_chunks = [chunk[i:i + max_chunk_len + args.margin] for i in range(0, len(chunk) - args.margin, max_chunk_len)]
+
             if len(sub_chunks[-1])<min_chunk_len:
-                output_chunks.extend(sub_chunks[0:-1])
+
+                if args.padding:  ##最後のチャンクはつなげて使用
+                    output_chunks.extend(sub_chunks[0:-2])
+                    output_chunks.append(sub_chunks[-2]+sub_chunks[-1])
+                else: ##最後のチャンクは捨てる
+                    output_chunks.append(sub_chunks[0:-1])
+
             else :
                 output_chunks.extend(sub_chunks)
         else:
