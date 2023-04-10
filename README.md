@@ -103,5 +103,5 @@ You can also change the length of the cut audio. The maximum length can be speci
 
 --padding : Whether to add padding to the last chunk when cutting an audio file.  
 ```
-python separate_in_speach.py --input ＜path to input file＞ --outdir ＜path to out dir＞ --max 5000 --min 2000 --freq -40
+python separate_in_speach.py --input ＜path to input file＞ --outdir ＜path to out dir＞ --max 5000 --min 2000 --freq -40 --keep_silence 500 --margin 0 --padding True
 ```
