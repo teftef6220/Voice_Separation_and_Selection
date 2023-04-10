@@ -5,7 +5,7 @@ RVC のデータセット作成のためのコードです。
 mp3 もしくは wav ファイルを入力とし、処理されたwav ファイルを返します。  
 
 - 音声ファイルを等間隔で分割するコードaudio_to_copas.py と  
-- 発話ごとに音声を分割し、適切な長さに区切るaudio_to_copas.py があります。  
+- 発話ごとに音声を分割し、適切な長さに区切るseparate_in_speach.py があります。  
 
 ### en  
 Code for RVC dataset creation.
