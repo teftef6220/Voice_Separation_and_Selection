@@ -1,4 +1,4 @@
-# Separate mp3 or wav Voice Data wav for RVC train
+# Separate mp3 or wav Voice Data for RVC train
 ### ja  
 
 RVC のデータセット作成のためのコードです。
@@ -70,7 +70,7 @@ You can also specify the duration of the wav file to be cut, the frequency (dB) 
 python audio_to_copas.py --input ＜path to mp3 file＞ --outdir ＜path to out dir＞ --time 4 --freq -40 --rate 50
 ```
 
-# Run audio_to_copas.py 
+# Run separate_in_speach.py 
 
 ### ja  
 このコードは音声発話ごとに分けて分割します。このコードでは分割する音声の長さをミリ秒で指定できます。
