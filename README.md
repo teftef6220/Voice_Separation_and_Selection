@@ -1,4 +1,11 @@
 # Separate mp3 or wav Voice Data for RVC train
+
+
+音声を利用するときは、法律に即した利用をしてください。  
+When using voice, please use it according to the law.  
+
+https://ja.wikibooks.org/wiki/%E8%91%97%E4%BD%9C%E6%A8%A9%E6%B3%95%E7%AC%AC30%E6%9D%A1
+
 ### ja  
 
 RVC のデータセット作成のためのコードです。
