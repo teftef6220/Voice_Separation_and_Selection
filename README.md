@@ -9,14 +9,16 @@ https://ja.wikibooks.org/wiki/%E8%91%97%E4%BD%9C%E6%A8%A9%E6%B3%95%E7%AC%AC30%E6
 ### ja  
 
 RVC のデータセット作成のためのコードです。
-mp3 もしくは wav ファイルを入力とし、処理されたwav ファイルを返します。  
+mp3 もしくは wav ファイルを含むディレクトリを入力とし、処理されたwav ファイルを返します。  
+結果は--out_dir で指定したディレクトリの下に入力時のディレクトリ名を作成し、その中に保存されます。
 
 - 音声ファイルを等間隔で分割するコードaudio_to_copas.py と  
 - 発話ごとに音声を分割し、適切な長さに区切るseparate_in_speach.py があります。  
 
 ### en  
 Code for RVC dataset creation.
-Takes an mp3 or wav file as input and returns a processed wav file.  
+Takes a directory containing mp3 or wav files as input and returns the processed wav file.  
+The result will be saved in the input directory name created under the directory specified by --out_dir.
 
 - Code audio_to_copas.py that divides the audio file at equal intervals and  
 - There is audio_to_copas.py that divides the audio for each utterance and divides it into appropriate length  
@@ -93,10 +95,14 @@ Splits mp3 or wav files into utterances.
 - If the speech file is too long, divide it into n parts (for example, if it is 16 seconds, divide it into 5+5+5+1 and don't save the last short part)
 - If the speech file is too short not save 
 ```
-python separate_in_speach.py --input ＜path to input file＞
+python separate_in_speach.py --input_dir ＜path to input file＞
 ```
 
 You can also change the length of the cut audio. The maximum length can be specified with --max and the minimum with --min. The unit is milliseconds. You can also set the gain with --freq
+
+--input_dir : path to input dir
+
+--out_dir : path to out dir
 
 --max : Maximum length of clipped audio (unit: milliseconds)
 
@@ -110,5 +116,5 @@ You can also change the length of the cut audio. The maximum length can be speci
 
 --padding : Whether to add padding to the last chunk when cutting an audio file.  
 ```
-python separate_in_speach.py --input ＜path to input file＞ --outdir ＜path to out dir＞ --max 5000 --min 2000 --freq -40 --keep_silence 500 --margin 0 --padding True
+python separate_in_speach.py --input_dir ＜path to input file＞ --outdir ＜path to out dir＞ --max 5000 --min 2000 --freq -40 --keep_silence 500 --margin 0 --padding True
 ```
